@@ -13,8 +13,17 @@
 
 
   <script>
+  let logo = {
+    x: 300,
+    y: 100,
+    rotation: 180,
+    alpha: 0.5,
+    height: 400,
+    width: 500
+  };
+
     $(document).ready(function(){
-      TweenLite.to($("#testImage"), 5, {x: 500})
+      TweenLite.to($("#testImage"), 4, logo)
     })
   </script>
 </body>
