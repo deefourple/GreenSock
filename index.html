@@ -9,39 +9,49 @@
 
 <h1>Go Dog Go</h1>
 
-<img src="http://cdn.designrshub.com/wp-content/uploads/2012/11/12_dog_logo_design.png" id="testImage" width="300" height="200">
+<!-- <img src="http://cdn.designrshub.com/wp-content/uploads/2012/11/12_dog_logo_design.png" id="testImage" width="300" height="200">
+ -->
+<img src="https://images.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" class="logo">
 
 
   <script>
     $(document).ready(function(){
-      var startFunction = function() {
-        TweenLite.to($("#testImage"), 1, {
-          x: 200,
-          y: 100,
-          rotation: 180,
-          alpha: 0,
-          height: 400,
-          width: 500,
-          onComplete: completeFunction
-        })
-      }
+      TweenMax.from(".logo", 4, {x: 600,
+        backgroundColor: "#000",
+        padding: 20,
+        borderColor: "#fff",
+        borderRadius: 26,
+        rotation: 360,
+        scale: 0,
+        opacity: 0,
+        delay: 1,
+        ease: Bounce.easeOut,
+      });
+        var startFunction = function() {
+          TweenLite.to($("#testImage"), 1, {
+            x: 200,
+            y: 100,
+            rotation: 180,
+            alpha: 0,
+            height: 400,
+            width: 500,
+            onComplete: completeFunction
+          })
+        }
 
-      var completeFunction = function() {
-        TweenLite.to($("#testImage"), 1, {
-          x: 0,
-          y: 0,
-          rotation: 360,
-          alpha: 1,
-          height: 200,
-          width: 200,
-          onComplete: startFunction
-        })
-      }
-
-
-
-      startFunction()
-    })
+        var completeFunction = function() {
+          TweenLite.to($("#testImage"), 1, {
+            x: 0,
+            y: 0,
+            rotation: 360,
+            alpha: 1,
+            height: 200,
+            width: 200,
+            onComplete: startFunction
+          })
+        }
+        startFunction()
+      })
   </script>
 </body>
 
