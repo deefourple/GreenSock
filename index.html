@@ -7,23 +7,40 @@
 
 <body>
 
-<h1>Green Sock Tutorial</h1>
+<h1>Go Dog Go</h1>
 
 <img src="http://cdn.designrshub.com/wp-content/uploads/2012/11/12_dog_logo_design.png" id="testImage" width="300" height="200">
 
 
   <script>
-  let logo = {
-    x: 300,
-    y: 100,
-    rotation: 180,
-    alpha: 0.5,
-    height: 400,
-    width: 500
-  };
-
     $(document).ready(function(){
-      TweenLite.to($("#testImage"), 4, logo)
+      var startFunction = function() {
+        TweenLite.to($("#testImage"), 1, {
+          x: 200,
+          y: 100,
+          rotation: 180,
+          alpha: 0,
+          height: 400,
+          width: 500,
+          onComplete: completeFunction
+        })
+      }
+
+      var completeFunction = function() {
+        TweenLite.to($("#testImage"), 1, {
+          x: 0,
+          y: 0,
+          rotation: 360,
+          alpha: 1,
+          height: 200,
+          width: 200,
+          onComplete: startFunction
+        })
+      }
+
+
+
+      startFunction()
     })
   </script>
 </body>
